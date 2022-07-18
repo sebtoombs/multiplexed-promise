@@ -12,6 +12,7 @@
     "prepare": "husky install",
     "pre-push": "git-is-clean && npm run lint && npm run type-check"
   },
+  "files": [],
   "keywords": [],
   "author": "",
   "license": "ISC",
