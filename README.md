@@ -11,6 +11,10 @@ Multiplexed promise is a tiny, zero-dependency library that allows you to create
 
 ## Get Started
 
+### [CodeSandbox Example](https://codesandbox.io/s/multiplexed-promise-rk0i8i)
+
+### Example
+
 ```typescript
 import MultiplexedPromise from "multiplexed-promise";
 
