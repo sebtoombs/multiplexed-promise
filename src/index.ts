@@ -15,8 +15,11 @@ const MultiplexedPromise = (
     const now = new Date();
     return `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}.${now.getMilliseconds()}`;
   };
+
+  // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle
   const _debug = (...args) =>
     !!debug &&
+    // eslint-disable-next-line no-console
     console.debug.call(console, `[${ts()}] MultiplexedPromise:`, ...args);
 
   const key = Symbol("promise-key");
