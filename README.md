@@ -15,20 +15,20 @@ Multiplexed promise is a tiny, zero-dependency library that allows you to create
 import MultiplexedPromise from "multiplexed-promise";
 
 // Create a "promise generator" - a function that returns a promise
-const fetcher = () => fetch(`https://pokeapi.co/api/v2/pokemon/ditto`);
+const pokemonFetcher = () => fetch(`https://pokeapi.co/api/v2/pokemon/ditto`);
 
 // Create a multiplexed version - this should live in a "service" or "utility" file, where it can be shared by multiple components
-const fetchThing = multiplexedPromise(fetcher);
+const fetchPokemon = MultiplexedPromise(pokemonFetcher);
 
 // Create a handler to handle the result of the multiplexed promise - in the case of a fetch response, we need to clone it
-const getThing = () => fetchThing().then((r) => r.clone().json());
+const getPokemon = () => fetchPokemon().then((r) => r.clone().json());
 
 // Use it
 
-getThing(); // Will fire the promise generator (fetcher)
-await getThing(); // Will subscribe to the response from the first call
+getPokemon(); // Will fire the promise generator (fetcher)
+await getPokemon(); // Will subscribe to the response from the first call
 
-getThing(); // Will fire the promise generator again, as the first promise has resolved.
+getPokemon(); // Will fire the promise generator again, as the first promise has resolved.
 ```
 
 ## Installation
