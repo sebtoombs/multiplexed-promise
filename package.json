@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit",
     "lint": "npx eslint . --ext .js,.ts",
     "prepare": "husky install",
-    "pre-push": "git-is-clean && npm run lint && npm run type-check"
+    "pre-push": "git-is-clean && npm run lint && npm run type-check && npm test"
   },
   "files": [],
   "keywords": [],
